@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cin>>s;
+        for(auto &x:s)
+        {
+            x=toupper(x);
+        }
+        if(s=="YES")
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+    return 0;
+}
+
+
