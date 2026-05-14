@@ -1,26 +1,43 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 int main()
 {
     int n;
     cin>>n;
-    set<int>s;
-    int arr[2*n-1];
-    for(int i=0;i<2*n-1;i++)
+    int passed[105]={0};
+    int p;
+    cin>>p;
+    for(int i=0; i<p; i++)
     {
-        cin>>arr[i];
+        int level;
+        cin>>level;
+        passed[level]=1;
     }
-    for(auto x:arr)
+    int q;
+    cin>>q;
+    for(int i=0; i<q; i++)
     {
-        s.insert(x);
+        int level;
+        cin>>level;
+        passed[level]=1;
     }
-    if(s.size()==n)
+    int can_pass_all=1;
+
+    for(int i=1; i<=n; i++)
     {
-        cout<<"I become the guy.";
+        if(passed[i]==0)
+        {
+            can_pass_all=0;
+            break;
+        }
+    }
+   
+    if(can_pass_all==1)
+    {
+        cout<<"I become the guy.\n";
     }
     else
     {
-        cout<<"Oh, my keyboard!";
+        cout<<"Oh, my keyboard!\n";
     }
-    return 0;
 }
